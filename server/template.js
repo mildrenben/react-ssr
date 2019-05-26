@@ -10,7 +10,7 @@ module.exports = res => {
   // if it was meant to be client side, it would be east enought to move to an onMount call
   // and show a loader whilst the client waits for the data
   axios
-    .get("https://swapi.co/api/people/1")
+    .get("https://swapi.co/api/people")
     .then(starWarsResponse => starWarsResponse.data)
     .then(starWarsData => {
       // Renders the react code before sending
@@ -18,11 +18,14 @@ module.exports = res => {
         path.join(__dirname + "/../build/index.html"),
         "utf-8",
         (err, data) => {
-          data.replace(
+          const fileWithReactRendered = data.replace(
             '<div id="root"></div>',
-            ReactDOMServer.renderToString(<ReactApp data={starWarsData} />)
+            `<div id="root">${ReactDOMServer.renderToString(
+              <ReactApp data={starWarsData} />
+            )}</div>`
           );
-          res.send(data);
+
+          res.send(fileWithReactRendered);
         }
       );
     });

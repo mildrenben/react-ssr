@@ -36,6 +36,7 @@
     ]
   },
   "devDependencies": {
-    "nodemon": "^1.19.1"
+    "nodemon": "^1.19.1",
+    "serialize-javascript": "^1.7.0"
   }
 }

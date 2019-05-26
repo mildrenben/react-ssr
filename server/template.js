@@ -4,6 +4,7 @@ const fs = require("fs");
 const path = require("path");
 const ReactApp = require("../src/App.js").default;
 const axios = require("axios");
+const serialize = require("serialize-javascript");
 
 module.exports = res => {
   // API data call (wasnt sure if this was meant to be server side or client side,
@@ -22,7 +23,9 @@ module.exports = res => {
             '<div id="root"></div>',
             `<div id="root">${ReactDOMServer.renderToString(
               <ReactApp data={starWarsData} />
-            )}</div>`
+            )}</div><script>window.__INITIAL_DATA__ = ${serialize(
+              starWarsData
+            )}</script>`
           );
 
           res.send(fileWithReactRendered);

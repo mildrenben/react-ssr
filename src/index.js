@@ -3,8 +3,11 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
-
-ReactDOM.hydrate(<App />, document.getElementById("root"));
+console.log("fpo", window.__INITIAL_DATA__);
+ReactDOM.hydrate(
+  <App data={window.__INITIAL_DATA__} />,
+  document.getElementById("root")
+);
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

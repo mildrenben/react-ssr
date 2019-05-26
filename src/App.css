@@ -1,0 +1,17 @@
+* {
+  font-family: karla;
+  color: #464646;
+}
+
+html {
+  background: #f8f9fc;
+}
+
+.character-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 1em;
+  justify-content: space-evenly;
+  max-width: 82em;
+  margin: 0 auto;
+}

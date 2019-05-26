@@ -1,0 +1,11 @@
+header {
+  background: white;
+  padding: 1em 2em;
+  margin-bottom: 4em;
+}
+
+h1 {
+  font-weight: 700;
+  font-size: 2em;
+  color: #4e3ce2;
+}

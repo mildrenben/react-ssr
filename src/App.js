@@ -14,9 +14,11 @@ const App = ({ data }) => (
       />
     </Helmet>
     <Header />
-    {data.results.map(character => (
-      <Character {...character} />
-    ))}
+    <div className="character-wrap">
+      {data.results.map(character => (
+        <Character {...character} />
+      ))}
+    </div>
   </div>
 );
 

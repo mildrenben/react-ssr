@@ -15,7 +15,7 @@ const Character = props => (
     <h2 className="character-name">{props.name}</h2>
     <ul className="attribute-list">
       {attributes.map(attribute => (
-        <li className="attribute-value">
+        <li className="attribute">
           <span className="attribute-title">{attribute.replace("_", " ")}</span>
           <span className="attribute-value">{props[attribute]}</span>
         </li>

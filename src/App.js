@@ -1,26 +1,18 @@
 import React from "react";
-import logo from "./logo.svg";
+import PropTypes from "prop-types";
+import Character from "./components/Character";
 import "./App.css";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const App = ({ data }) => (
+  <div>
+    {data.results.map(character => (
+      <Character {...character} />
+    ))}
+  </div>
+);
+
+App.propTypes = {
+  data: PropTypes.object.isRequired
+};
 
 export default App;

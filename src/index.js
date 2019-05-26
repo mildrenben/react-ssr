@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
-console.log("fpo", window.__INITIAL_DATA__);
+
 ReactDOM.hydrate(
   <App data={window.__INITIAL_DATA__} />,
   document.getElementById("root")

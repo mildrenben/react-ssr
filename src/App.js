@@ -15,8 +15,8 @@ const App = ({ data }) => (
     </Helmet>
     <Header />
     <div className="character-wrap">
-      {data.results.map(character => (
-        <Character {...character} />
+      {data.results.map((character, idx) => (
+        <Character {...character} idx={idx} key={character.name} />
       ))}
     </div>
   </div>

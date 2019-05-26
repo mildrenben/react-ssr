@@ -11,11 +11,11 @@ const attributes = [
 ];
 
 const Character = props => (
-  <div className="character">
+  <div className="character" style={{ animationDelay: `0.${props.idx}s` }}>
     <h2 className="character-name">{props.name}</h2>
     <ul className="attribute-list">
       {attributes.map(attribute => (
-        <li className="attribute">
+        <li className="attribute" key={`attribute-${attribute}`}>
           <span className="attribute-title">{attribute.replace("_", " ")}</span>
           <span className="attribute-value">{props[attribute]}</span>
         </li>
@@ -31,7 +31,8 @@ Character.propTypes = {
   skin_color: PropTypes.string.isRequired,
   eye_color: PropTypes.string.isRequired,
   birth_year: PropTypes.string.isRequired,
-  gender: PropTypes.string.isRequired
+  gender: PropTypes.string.isRequired,
+  idx: PropTypes.number.isRequired
 };
 
 export default Character;
